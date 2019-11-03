@@ -1,6 +1,40 @@
 # udemy_DockeryAndKubernetes
 Udemy: [course](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)
 
+## Basic Docker Commands
+### Run Commands
+```cmd
+$ docker run hello-world        # pull image from docker hub and run
+
+$ docker run -it alpine sh      # run the alpine image and over-ride the default command with 'sh'
+
+$ docker run -d redis           # pull image from docker hub and run in the background
+$ docker container ls           # see the running container
+$ docker ps                     # see running docker processes (looks like docker container ls)
+$ docker exec -it <container-id> bash   # run a 2nd command (bash) in running container
+$ docker stop <container-id>    # stop docker container gracefully
+$ docker kill <container-id>    # stop docker continer immediately
+```
+
+### System Commands
+```cmd
+$ docker system df              # show docker related file system resources
+$ docker system prune --all     # remove docker resources from file system
+```
+
+### docker-compose
+```cmd
+# in a directory with a docker-compose.yml file:
+
+$ docker-compose up     # start the containers defined n the docker-compose.yml file
+$ docker-compose down   # stop the containers that were started with docker-compose up
+
+$ docker-compose up --build     # force rebuild of docker files
+
+$ docker-compose up -d   # start containers per docker-compose.yml in the background
+$ docker-compose down
+```
+
 ## Section 3
 ### Commands
 ```cmd
@@ -24,4 +58,12 @@ $ docker commit -c 'CMD ["redis-server"]' c4ddef839cf8
 ```cmd
 $ docker build -t simpleweb .
 $ docker run -p 8080:8080 simpleweb
+```
+
+## Section 4
+### Commands
+```cmd
+$ docker-compose up
+or
+$ docker-compose up --build
 ```
