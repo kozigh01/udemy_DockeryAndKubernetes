@@ -18,3 +18,10 @@ $ docker run -it alpine sh
 $ docker ps
 $ docker commit -c 'CMD ["redis-server"]' c4ddef839cf8
 ```
+
+## Section 4
+### Commands
+```cmd
+$ docker build -t simpleweb .
+$ docker run -p 8080:8080 simpleweb
+```
