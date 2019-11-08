@@ -72,7 +72,7 @@ $ docker build -t simpleweb .
 $ docker run -p 8080:8080 simpleweb
 ```
 
-## Section 4
+## Section 5
 
 ### Commands
 
@@ -80,4 +80,20 @@ $ docker run -p 8080:8080 simpleweb
 $ docker-compose up
 or
 $ docker-compose up --build
+```
+
+## Section 6
+
+### Resources
+* Create React App (npx): [quick start](https://create-react-app.dev/docs/getting-started/#quick-start)
+
+### Commands
+```cmd
+$ docker build -f Dockerfile.dev -t mkozi/frontend .
+
+$ docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app mkozi/frontend
+$ docker run -p 3000:3000 -v /app/node_modules -v //c//git//Udemy//udemy_DockeryAndKubernetes//my-code//Section6-workflow//frontend:/app mkozi/frontend
+
+# MINW64 Git bash has issue with windows paths, the following works:
+$ MSYS_NO_PATHCONV=1 docker run -p 3000:3000 -v /app/node_modules -v /c/git/Udemy/udemy_DockeryAndKubernetes/my-code/Section6-workflow/frontend:/app mkozi/frontend
 ```
