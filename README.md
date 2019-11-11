@@ -92,8 +92,14 @@ $ docker-compose up --build
 $ docker build -f Dockerfile.dev -t mkozi/frontend .
 
 $ docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app mkozi/frontend
-$ docker run -p 3000:3000 -v /app/node_modules -v //c//git//Udemy//udemy_DockeryAndKubernetes//my-code//Section6-workflow//frontend:/app mkozi/frontend
+$ docker run -p 3000:3000 -v /app/node_modules -v //c/git/Udemy/udemy_DockeryAndKubernetes/my-code/Section6-workflow/frontend:/app mkozi/frontend
 
 # MINW64 Git bash has issue with windows paths, the following works:
 $ MSYS_NO_PATHCONV=1 docker run -p 3000:3000 -v /app/node_modules -v /c/git/Udemy/udemy_DockeryAndKubernetes/my-code/Section6-workflow/frontend:/app mkozi/frontend
+
+# run the tests (alternate is to add service to docker-compose.yml)
+$ MSYS_NO_PATHCONV=1 docker run -p 3000:3000 -v /app/node_modules -v /c/git/Udemy/udemy_DockeryAndKubernetes/my-code/Section6-workflow/frontend:/app mkozi/frontend
+# in separate terminal
+$ docker ps  # get docker id
+$ docker exec -it <container id> npm run test
 ```
