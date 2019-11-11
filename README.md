@@ -102,4 +102,8 @@ $ MSYS_NO_PATHCONV=1 docker run -p 3000:3000 -v /app/node_modules -v /c/git/Udem
 # in separate terminal
 $ docker ps  # get docker id
 $ docker exec -it <container id> npm run test
+
+# two phase nginx prod docker build (run from the Section6 frontend directory)
+$ docker build -t frontend-prod .
+$ docker run -p 8080:80 <image-id>
 ```
