@@ -1,0 +1,10 @@
+SUDO: required
+services:
+  - docker
+
+before_install:
+  - docker build -t mkozi/frontend -f ./my-code/Section6-workflow/frontend/Dockerfile.dev ./my-code/Section6-workflow/frontend
+
+script:
+  - docker run -e CI=true mkozi/frontend npm run test
+

@@ -107,3 +107,7 @@ $ docker exec -it <container id> npm run test
 $ docker build -t frontend-prod .
 $ docker run -p 8080:80 <image-id>
 ```
+## Section 7
+
+### Resources
+* Travis CI: [site](https://travis-ci.org/)
