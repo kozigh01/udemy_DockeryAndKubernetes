@@ -2,6 +2,15 @@
 
 Udemy: [course](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)
 
+## Handy Generic Commands (from bash shell)
+```cmd
+# Find all node_module directories
+$ find . -type d -name 'node_modules'
+
+# Delete all node_module directories
+$ find . -type d -name 'node_modules' -exec rm -rv {} \;
+```
+
 ## Basic Docker Commands
 
 ### Run Commands
@@ -107,7 +116,21 @@ $ docker exec -it <container id> npm run test
 $ docker build -t frontend-prod .
 $ docker run -p 8080:80 <image-id>
 ```
+
 ## Section 7
 
 ### Resources
+
 * Travis CI: [site](https://travis-ci.org/)
+
+## Section 8
+
+### Command
+
+```cmd
+# from the Section8-Multi-Container root directory:
+$ docker-compose up --build
+
+# when done:
+$ docker-compose down
+```
