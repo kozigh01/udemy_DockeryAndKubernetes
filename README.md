@@ -134,3 +134,33 @@ $ docker-compose up --build
 # when done:
 $ docker-compose down
 ```
+
+## Section 12
+
+### Commands
+
+```cmd
+# pod only used in development
+$ kubectl apply -f client-pod.yaml
+$ kubectl apply -f client-node-port.yaml
+$ kubectl get pods
+$ kubectl get services
+
+$ kubectl describe pod client-pod
+
+$ kubectl delete -f client-pod.yaml
+
+# deployment can be used for dev or production
+$ kubectl apply -f client-deployment.yaml
+
+$ kubectl get pods -o wide
+
+# update to a new version of the image
+$ kubectl get deployment
+$ kubectl set image deployment/client-deployment client=mkozi/multi-client:v5
+$ kubectl describe pod <pod-name>
+
+# misc
+$ kubectl logs <pod-name>
+$ kubectl exec -it <pod-name> bash
+```
