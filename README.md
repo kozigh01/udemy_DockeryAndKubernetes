@@ -164,3 +164,29 @@ $ kubectl describe pod <pod-name>
 $ kubectl logs <pod-name>
 $ kubectl exec -it <pod-name> bash
 ```
+
+## Section 14: Multi-container app in kubernetes
+
+ingress-nginx: [github](github.com/kubernetes/ingress-nginx) | [docs](https://kubernetes.github.io/ingress-nginx/) | [manditory yaml](https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml)
+Kubernetes Ingress System: [blog](https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html)
+kubernetes documentation: [kubernetes.is](https://kubernetes.io/)
+
+```cmd
+# can apply all files in a directory (such as k8s)
+$ kubectl apply -f k8s
+
+$ kubectl get storageclass
+$ kubectl describe storageclass
+
+$ kubectl get pv
+$ kubectl get pvc
+
+$ kubectl create secret generic pgpassword --from-literal PGPASSWORD=password123
+
+# nginx ingress
+# https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml
+$ kubectl get svc -n ingress-nginx
+
+```
